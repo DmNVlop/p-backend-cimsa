@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pedidos",
+  "info": {
+    "singularName": "pedido",
+    "pluralName": "pedidos",
+    "displayName": "Pedido"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "piezas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pieza.pieza",
+      "mappedBy": "pedido"
+    }
+  }
+}

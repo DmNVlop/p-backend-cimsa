@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cantos",
+  "info": {
+    "singularName": "canto",
+    "pluralName": "cantos",
+    "displayName": "Canto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "espesor": {
+      "type": "decimal"
+    }
+  }
+}

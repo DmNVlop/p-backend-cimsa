@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "materials",
+  "info": {
+    "singularName": "material",
+    "pluralName": "materials",
+    "displayName": "Material",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "material": {
+      "type": "string"
+    },
+    "veta": {
+      "type": "enumeration",
+      "enum": [
+        "L",
+        "A"
+      ],
+      "required": false
+    },
+    "espesor": {
+      "type": "decimal"
+    },
+    "largo": {
+      "type": "decimal"
+    },
+    "ancho": {
+      "type": "decimal"
+    },
+    "canto_por_defecto": {
+      "type": "string"
+    }
+  }
+}
