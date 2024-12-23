@@ -409,10 +409,10 @@ export interface ApiMaterialMaterial extends Struct.CollectionTypeSchema {
   };
   attributes: {
     ancho: Schema.Attribute.Decimal;
-    canto_por_defecto: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    defaultEdge: Schema.Attribute.Relation<'oneToOne', 'api::canto.canto'>;
     espesor: Schema.Attribute.Decimal;
     largo: Schema.Attribute.Decimal;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

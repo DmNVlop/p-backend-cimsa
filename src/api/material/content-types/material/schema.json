@@ -32,8 +32,10 @@
     "ancho": {
       "type": "decimal"
     },
-    "canto_por_defecto": {
-      "type": "string"
+    "defaultEdge": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::canto.canto"
     }
   }
 }
