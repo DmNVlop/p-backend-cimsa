@@ -4,10 +4,11 @@
   "info": {
     "singularName": "pieza",
     "pluralName": "piezas",
-    "displayName": "Pieza"
+    "displayName": "Pieza",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -18,20 +19,23 @@
     },
     "veta": {
       "type": "enumeration",
-      "enum": [
-        "L",
-        "A"
-      ],
-	  "required": false
+      "enum": ["L", "A"],
+      "required": false
     },
     "largo": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true,
+      "default": 1
     },
     "ancho": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true,
+      "default": 1
     },
     "cantidad": {
-      "type": "integer"
+      "type": "integer",
+      "default": 1,
+      "required": true
     },
     "cantoL1": {
       "type": "relation",

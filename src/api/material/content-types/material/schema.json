@@ -8,12 +8,13 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "material": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "veta": {
       "type": "enumeration",
@@ -24,13 +25,19 @@
       "required": false
     },
     "espesor": {
-      "type": "decimal"
+      "type": "decimal",
+      "default": 1,
+      "required": true
     },
     "largo": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true,
+      "default": 1
     },
     "ancho": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true,
+      "default": 1
     },
     "defaultEdge": {
       "type": "relation",

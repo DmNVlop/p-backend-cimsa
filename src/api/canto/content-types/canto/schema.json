@@ -4,21 +4,26 @@
   "info": {
     "singularName": "canto",
     "pluralName": "cantos",
-    "displayName": "Canto"
+    "displayName": "Canto",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "code": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "espesor": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true,
+      "default": 1
     }
   }
 }

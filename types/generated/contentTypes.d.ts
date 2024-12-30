@@ -372,20 +372,23 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCantoCanto extends Struct.CollectionTypeSchema {
   collectionName: 'cantos';
   info: {
+    description: '';
     displayName: 'Canto';
     pluralName: 'cantos';
     singularName: 'canto';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    code: Schema.Attribute.Text;
+    code: Schema.Attribute.Text & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    espesor: Schema.Attribute.Decimal;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    espesor: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::canto.canto'> &
       Schema.Attribute.Private;
@@ -405,23 +408,29 @@ export interface ApiMaterialMaterial extends Struct.CollectionTypeSchema {
     singularName: 'material';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    ancho: Schema.Attribute.Decimal;
+    ancho: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     defaultEdge: Schema.Attribute.Relation<'oneToOne', 'api::canto.canto'>;
-    espesor: Schema.Attribute.Decimal;
-    largo: Schema.Attribute.Decimal;
+    espesor: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    largo: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::material.material'
     > &
       Schema.Attribute.Private;
-    material: Schema.Attribute.String;
+    material: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -433,15 +442,18 @@ export interface ApiMaterialMaterial extends Struct.CollectionTypeSchema {
 export interface ApiPedidoPedido extends Struct.CollectionTypeSchema {
   collectionName: 'pedidos';
   info: {
+    description: '';
     displayName: 'Pedido';
     pluralName: 'pedidos';
     singularName: 'pedido';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    code: Schema.Attribute.String;
+    code: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -452,7 +464,8 @@ export interface ApiPedidoPedido extends Struct.CollectionTypeSchema {
       'api::pedido.pedido'
     > &
       Schema.Attribute.Private;
-    nombre: Schema.Attribute.String;
+    nombre: Schema.Attribute.String & Schema.Attribute.Required;
+    numeroDePiezas: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     piezas: Schema.Attribute.Relation<'oneToMany', 'api::pieza.pieza'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -464,16 +477,21 @@ export interface ApiPedidoPedido extends Struct.CollectionTypeSchema {
 export interface ApiPiezaPieza extends Struct.CollectionTypeSchema {
   collectionName: 'piezas';
   info: {
+    description: '';
     displayName: 'Pieza';
     pluralName: 'piezas';
     singularName: 'pieza';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    ancho: Schema.Attribute.Decimal;
-    cantidad: Schema.Attribute.Integer;
+    ancho: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    cantidad: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
     cantoA1: Schema.Attribute.Relation<'oneToOne', 'api::canto.canto'>;
     cantoA2: Schema.Attribute.Relation<'oneToOne', 'api::canto.canto'>;
     cantoL1: Schema.Attribute.Relation<'oneToOne', 'api::canto.canto'>;
@@ -481,7 +499,9 @@ export interface ApiPiezaPieza extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    largo: Schema.Attribute.Decimal;
+    largo: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::pieza.pieza'> &
       Schema.Attribute.Private;
