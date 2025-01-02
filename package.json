@@ -8,7 +8,10 @@
     "deploy": "strapi deploy",
     "develop": "strapi develop",
     "start": "strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "production": "cross-env NODE_ENV=production HOST=0.0.0.0 strapi start",
+    "productionW": "set NODE_ENV=production && strapi start",
+    "routes": "strapi routes:list"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.6.0",
@@ -25,6 +28,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
     "typescript": "^5"
   },
   "engines": {
