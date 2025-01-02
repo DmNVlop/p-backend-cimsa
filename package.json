@@ -2,14 +2,22 @@
   "name": "p-backend-cimsa",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "Backend para la Empres CIMSA",
+  "author": {
+    "name": "Damian Vidal",
+    "email": "dmnvlop@gmail.com",
+    "role": "System Engineer",
+    "location": "Spain",
+    "country": "Spain",
+    "organization": "Prosolid3d"
+  },
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
-    "production": "cross-env NODE_ENV=production HOST=0.0.0.0 strapi start",
+    "production": "NODE_ENV=production HOST=0.0.0.0 strapi start",
     "productionW": "set NODE_ENV=production && strapi start",
     "routes": "strapi routes:list"
   },
