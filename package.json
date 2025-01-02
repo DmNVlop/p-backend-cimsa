@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "strapi build",
+    "buildP": "NODE_ENV=production NODE_OPTIONS='--max-old-space-size=4096' strapi build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
     "start": "strapi start",
