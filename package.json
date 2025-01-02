@@ -13,13 +13,12 @@
   },
   "scripts": {
     "build": "strapi build",
-    "buildP": "NODE_ENV=production NODE_OPTIONS='--max-old-space-size=4096' strapi build",
+    "buildP": "NODE_ENV=production strapi build",
+    "buildPW": "set NODE_ENV=production && strapi build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
     "start": "strapi start",
-    "startM": "node_ENV=production HOST=0.0.0.0 NODE_OPTIONS='--max-old-space-size=4096' npm run start",
     "strapi": "strapi",
-    "prod": "NODE_ENV=production HOST=0.0.0.0 NODE_OPTIONS='--max-old-space-size=4096' strapi start",
     "production": "NODE_ENV=production HOST=0.0.0.0 strapi start",
     "productionW": "set NODE_ENV=production && strapi start",
     "routes": "strapi routes:list"

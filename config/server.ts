@@ -8,6 +8,6 @@ export default ({ env }) => {
     app: {
       keys: env.array("APP_KEYS"),
     },
-    mode: env("MODE", "dev"),
+    mode: env("MODE", "devNA"),
   };
 };
