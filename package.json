@@ -20,6 +20,7 @@
     "start": "strapi start",
     "strapi": "strapi",
     "production": "NODE_ENV=production HOST=0.0.0.0 strapi start",
+    "productionD": "set NODE_ENV=development && set HOST=0.0.0.0 && strapi start",
     "productionW": "set NODE_ENV=production && strapi start",
     "routes": "strapi routes:list"
   },
