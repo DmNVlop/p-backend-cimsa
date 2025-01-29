@@ -19,7 +19,10 @@
     },
     "veta": {
       "type": "enumeration",
-      "enum": ["L", "A"],
+      "enum": [
+        "L",
+        "A"
+      ],
       "required": false
     },
     "largo": {

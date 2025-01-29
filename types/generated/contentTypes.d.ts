@@ -464,7 +464,7 @@ export interface ApiPedidoPedido extends Struct.CollectionTypeSchema {
       'api::pedido.pedido'
     > &
       Schema.Attribute.Private;
-    nombre: Schema.Attribute.String & Schema.Attribute.Required;
+    nombre: Schema.Attribute.String;
     numeroDePiezas: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     piezas: Schema.Attribute.Relation<'oneToMany', 'api::pieza.pieza'>;
     publishedAt: Schema.Attribute.DateTime;

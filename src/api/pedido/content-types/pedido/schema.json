@@ -14,12 +14,12 @@
   "attributes": {
     "nombre": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "code": {
       "type": "string",
       "required": true,
-	  "unique": true
+      "unique": true
     },
     "description": {
       "type": "text"
